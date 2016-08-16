@@ -1,0 +1,22 @@
+def nfruits(init_quan_dic, string_pattern):
+
+    dictionary = init_quan_dic
+    pattern = string_pattern
+    print('Initial_Dictionary: ', dictionary)
+    print('String_Pattern: ', pattern)
+
+    for i in dictionary:
+        for j in pattern:
+
+            if i == j: # A = A or C = C
+                dictionary[i] -= 1
+                print('Minus Qantity'+i+':', dictionary[i])
+            else:
+                dictionary[i] += 1
+                print('Add Qantity'+i+':', dictionary[i])
+
+
+    print('New_Dictionary: ', dictionary)
+    return dictionary
+
+print(nfruits({'A':1, 'B':2, 'C': 3},('A','C')))
